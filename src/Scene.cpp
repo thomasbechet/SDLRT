@@ -4,13 +4,22 @@
 #include <Plane.hpp>
 
 Scene::Scene() :
-    m_camera(glm::vec3(0.0f, 2.0f, -4.0f), glm::vec3(0.0f, 0.0f, 0.0f))
+    m_camera(glm::vec3(0.0f, 0.5f, -6.0f), glm::vec3(0.0f, 0.0f, 0.0f))
 {
-    m_objects.emplace_back(std::make_unique<Sphere>(1.0f, glm::vec3(-1.0f, 0.0f, 0.5f)));
-    m_objects.emplace_back(std::make_unique<Sphere>(1.0f, glm::vec3(1.0f, 0.0f, 0.0f)));
-    m_objects.emplace_back(std::make_unique<Sphere>(1.0f, glm::vec3(2.0f, 0.0f, 0.0f)));
+    m_objects.emplace_back(std::make_unique<Sphere>(1.0f, glm::vec3(-2.0f, 0.0f, 0.0f), Material {
+        glm::vec3(0.5f, 0.2f, 0.2f),
+        false
+    }));
+    m_objects.emplace_back(std::make_unique<Sphere>(1.0f, glm::vec3(0.0f, 0.0f, 0.0f)));
+    m_objects.emplace_back(std::make_unique<Sphere>(1.0f, glm::vec3(2.0f, 0.0f, 0.0f), Material {
+        glm::vec3(0.2f, 0.5f, 0.2f),
+        false
+    }));
 
-    m_objects.emplace_back(std::make_unique<Plane>(glm::vec3(0.0f, -2.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f)));
+    m_objects.emplace_back(std::make_unique<Plane>(glm::vec3(0.0f, -5.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f), Material {
+        glm::vec3(1.0f, 1.0f, 1.0f),
+        true
+    }));
 }
 
 void Scene::update()

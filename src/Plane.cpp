@@ -1,8 +1,9 @@
 #include <Plane.hpp>
 
-Plane::Plane(glm::vec3 position, glm::vec3 normal) :
+Plane::Plane(glm::vec3 position, glm::vec3 normal, Material material) :
     m_position(position),
-    m_normal(glm::normalize(normal))
+    m_normal(glm::normalize(normal)),
+    m_material(material)
 {
 
 }
@@ -18,6 +19,7 @@ bool Plane::intersect(Ray ray, HitInfo& info)
             info.distance = 100000.0f;
             info.normal = m_normal;
             info.position = m_position;
+            info.material = m_material;
             return true;
         }
     }

@@ -10,7 +10,7 @@ void setPixel(SDL_Surface& surface, unsigned x, unsigned y, Uint8 r, Uint8 g, Ui
 
 void Render::render(SDL_Surface& surface, Scene& scene)
 {
-    glm::mat4 inverse = scene.getCamera().getInverseVPMatrix();
+    glm::mat4 inverse = scene.getCamera().inverseMatrix();
     glm::vec3 position = scene.getCamera().getPosition();
 
     for(int x = 0; x < WIDTH; x++)

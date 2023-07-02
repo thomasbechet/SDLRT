@@ -6,7 +6,7 @@
 class Plane : public Object
 {
 public:
-    Plane(glm::vec3 position, glm::vec3 normal);
+    Plane(glm::vec3 position, glm::vec3 normal, Material material = Material());
 
     bool intersect(Ray ray, HitInfo& info) override;
 

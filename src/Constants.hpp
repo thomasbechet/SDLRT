@@ -11,4 +11,4 @@ constexpr unsigned HEIGHT = 1080;
 constexpr unsigned WIDTH_CENTER = WIDTH / 2;
 constexpr unsigned HEIGHT_CENTER = HEIGHT / 2;
 
-constexpr bool GENERATE_BMP_IMAGE = true;
+constexpr bool GENERATE_BMP_IMAGE = false;
